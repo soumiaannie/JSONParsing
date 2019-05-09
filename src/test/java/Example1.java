@@ -1,6 +1,4 @@
 
-
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -31,6 +29,12 @@ public class Example1 {
                 {
                     System.out.println(((JSONObject) platforms.get(i)).get("id")+ " " + ((JSONObject) platforms.get(i)).get("name"));
                 }
+
+                //Get the code
+                System.out.println(((JSONObject) jsonObject.get("esrbRating")).get("code"));
+
+                Map<String, ?> esrbRating = (Map<String, ?>) jsonObject.get("esrbRating");
+                System.out.println(esrbRating.get("code"));
 
 
             } catch (FileNotFoundException e) {
